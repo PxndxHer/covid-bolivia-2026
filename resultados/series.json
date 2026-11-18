@@ -1,0 +1,1319 @@
+{
+  "serie": {
+    "fechas": [
+      "2020-03-14",
+      "2020-03-21",
+      "2020-03-28",
+      "2020-04-04",
+      "2020-04-11",
+      "2020-04-18",
+      "2020-04-25",
+      "2020-05-02",
+      "2020-05-09",
+      "2020-05-16",
+      "2020-05-23",
+      "2020-05-30",
+      "2020-06-06",
+      "2020-06-13",
+      "2020-06-20",
+      "2020-06-27",
+      "2020-07-04",
+      "2020-07-11",
+      "2020-07-18",
+      "2020-07-25",
+      "2020-08-01",
+      "2020-08-08",
+      "2020-08-15",
+      "2020-08-22",
+      "2020-08-29",
+      "2020-09-05",
+      "2020-09-12",
+      "2020-09-19"
+    ],
+    "casos": [
+      10,
+      9,
+      55,
+      65,
+      137,
+      217,
+      314,
+      422,
+      1037,
+      1311,
+      2002,
+      3152,
+      3997,
+      4201,
+      5547,
+      6947,
+      7395,
+      8747,
+      10537,
+      10354,
+      10333,
+      11102,
+      8568,
+      10976,
+      6974,
+      5171,
+      5592,
+      4879
+    ],
+    "n_semanas": 28,
+    "fecha_pico": "2020-08-08",
+    "casos_pico": 11102,
+    "total": 130051
+  },
+  "horizonte": 4,
+  "cortes": 13,
+  "primer_origen": 12,
+  "metrica_seleccion": "rmse",
+  "metricas": [
+    {
+      "modelo": "holt",
+      "nombre": "Holt amortiguado",
+      "MAE": 1965.7,
+      "RMSE": 2774.4,
+      "MAPE": 27.01,
+      "R2": -0.524,
+      "MASE": 3.79,
+      "MAE_relativo_ingenuo": 0.828,
+      "n": 52
+    },
+    {
+      "modelo": "ingenuo",
+      "nombre": "Ingenuo",
+      "MAE": 2374.0,
+      "RMSE": 2853.2,
+      "MAPE": 33.16,
+      "R2": -0.612,
+      "MASE": 5.136,
+      "MAE_relativo_ingenuo": 1.0,
+      "n": 52
+    },
+    {
+      "modelo": "lineal",
+      "nombre": "Regresión lineal (últimas 6)",
+      "MAE": 2177.3,
+      "RMSE": 3009.5,
+      "MAPE": 30.66,
+      "R2": -0.794,
+      "MASE": 4.112,
+      "MAE_relativo_ingenuo": 0.917,
+      "n": 52
+    },
+    {
+      "modelo": "media_movil",
+      "nombre": "Media móvil (3 sem.)",
+      "MAE": 2914.0,
+      "RMSE": 3276.5,
+      "MAPE": 40.13,
+      "R2": -1.126,
+      "MASE": 6.499,
+      "MAE_relativo_ingenuo": 1.227,
+      "n": 52
+    },
+    {
+      "modelo": "arima",
+      "nombre": "ARIMA sobre log1p",
+      "MAE": 3156.5,
+      "RMSE": 4191.5,
+      "MAPE": 42.53,
+      "R2": -2.479,
+      "MASE": 7.132,
+      "MAE_relativo_ingenuo": 1.33,
+      "n": 52
+    },
+    {
+      "modelo": "polinomica",
+      "nombre": "Polinómica (grado 2)",
+      "MAE": 3370.9,
+      "RMSE": 5012.3,
+      "MAPE": 48.41,
+      "R2": -3.975,
+      "MASE": 5.851,
+      "MAE_relativo_ingenuo": 1.42,
+      "n": 52
+    }
+  ],
+  "rmse_por_horizonte": {
+    "arima": [
+      1421.0,
+      2688.5,
+      4123.0,
+      6635.5
+    ],
+    "holt": [
+      1636.0,
+      2002.3,
+      2805.8,
+      4028.8
+    ],
+    "ingenuo": [
+      1723.6,
+      2322.5,
+      3044.9,
+      3863.6
+    ],
+    "lineal": [
+      1492.1,
+      2216.1,
+      3193.6,
+      4346.4
+    ],
+    "media_movil": [
+      1915.9,
+      2808.0,
+      3588.2,
+      4302.4
+    ],
+    "polinomica": [
+      2518.9,
+      3957.2,
+      5400.2,
+      7023.1
+    ]
+  },
+  "mejor_modelo": "holt",
+  "validacion_mejor": [
+    {
+      "modelo": "ingenuo",
+      "origen": 12,
+      "h": 1,
+      "fecha": "2020-06-06",
+      "real": 3997,
+      "pronostico": 3152.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 12,
+      "h": 2,
+      "fecha": "2020-06-13",
+      "real": 4201,
+      "pronostico": 3152.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 12,
+      "h": 3,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 3152.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 12,
+      "h": 4,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 3152.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 12,
+      "h": 1,
+      "fecha": "2020-06-06",
+      "real": 3997,
+      "pronostico": 4160.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 12,
+      "h": 2,
+      "fecha": "2020-06-13",
+      "real": 4201,
+      "pronostico": 5212.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 12,
+      "h": 3,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 6255.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 12,
+      "h": 4,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 7291.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 13,
+      "h": 1,
+      "fecha": "2020-06-13",
+      "real": 4201,
+      "pronostico": 3997.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 13,
+      "h": 2,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 3997.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 13,
+      "h": 3,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 3997.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 13,
+      "h": 4,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 3997.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 13,
+      "h": 1,
+      "fecha": "2020-06-13",
+      "real": 4201,
+      "pronostico": 4951.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 13,
+      "h": 2,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 5882.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 13,
+      "h": 3,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 6804.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 13,
+      "h": 4,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 7717.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 14,
+      "h": 1,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 4201.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 14,
+      "h": 2,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 4201.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 14,
+      "h": 3,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 4201.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 14,
+      "h": 4,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 4201.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 14,
+      "h": 1,
+      "fecha": "2020-06-20",
+      "real": 5547,
+      "pronostico": 4562.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 14,
+      "h": 2,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 4886.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 14,
+      "h": 3,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 5185.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 14,
+      "h": 4,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 5460.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 15,
+      "h": 1,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 5547.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 15,
+      "h": 2,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 5547.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 15,
+      "h": 3,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 5547.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 15,
+      "h": 4,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 5547.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 15,
+      "h": 1,
+      "fecha": "2020-06-27",
+      "real": 6947,
+      "pronostico": 6236.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 15,
+      "h": 2,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 7073.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 15,
+      "h": 3,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 7897.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 15,
+      "h": 4,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 8709.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 16,
+      "h": 1,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 6947.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 16,
+      "h": 2,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 6947.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 16,
+      "h": 3,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 6947.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 16,
+      "h": 4,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 6947.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 16,
+      "h": 1,
+      "fecha": "2020-07-04",
+      "real": 7395,
+      "pronostico": 8169.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 16,
+      "h": 2,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 9382.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 16,
+      "h": 3,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 10585.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 16,
+      "h": 4,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 11778.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 17,
+      "h": 1,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 7395.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 17,
+      "h": 2,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 7395.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 17,
+      "h": 3,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 7395.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 17,
+      "h": 4,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 7395.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 17,
+      "h": 1,
+      "fecha": "2020-07-11",
+      "real": 8747,
+      "pronostico": 8485.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 17,
+      "h": 2,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 9415.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 17,
+      "h": 3,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 10337.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 17,
+      "h": 4,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 11250.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 18,
+      "h": 1,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 8747.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 18,
+      "h": 2,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 8747.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 18,
+      "h": 3,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 8747.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 18,
+      "h": 4,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 8747.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 18,
+      "h": 1,
+      "fecha": "2020-07-18",
+      "real": 10537,
+      "pronostico": 9695.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 18,
+      "h": 2,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 10724.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 18,
+      "h": 3,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 11742.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 18,
+      "h": 4,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 12750.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 19,
+      "h": 1,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 10537.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 19,
+      "h": 2,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 10537.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 19,
+      "h": 3,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 10537.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 19,
+      "h": 4,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 10537.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 19,
+      "h": 1,
+      "fecha": "2020-07-25",
+      "real": 10354,
+      "pronostico": 11653.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 19,
+      "h": 2,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 13036.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 19,
+      "h": 3,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 14404.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 19,
+      "h": 4,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 15759.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 20,
+      "h": 1,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 10354.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 20,
+      "h": 2,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 10354.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 20,
+      "h": 3,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 10354.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 20,
+      "h": 4,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 10354.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 20,
+      "h": 1,
+      "fecha": "2020-08-01",
+      "real": 10333,
+      "pronostico": 11763.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 20,
+      "h": 2,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 12684.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 20,
+      "h": 3,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 13596.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 20,
+      "h": 4,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 14498.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 21,
+      "h": 1,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 10333.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 21,
+      "h": 2,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 10333.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 21,
+      "h": 3,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 10333.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 21,
+      "h": 4,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 10333.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 21,
+      "h": 1,
+      "fecha": "2020-08-08",
+      "real": 11102,
+      "pronostico": 10856.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 21,
+      "h": 2,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 11371.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 21,
+      "h": 3,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 11880.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 21,
+      "h": 4,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 12384.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 22,
+      "h": 1,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 11102.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 22,
+      "h": 2,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 11102.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 22,
+      "h": 3,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 11102.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 22,
+      "h": 4,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 11102.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 22,
+      "h": 1,
+      "fecha": "2020-08-15",
+      "real": 8568,
+      "pronostico": 11701.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 22,
+      "h": 2,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 12295.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 22,
+      "h": 3,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 12883.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 22,
+      "h": 4,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 13466.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 23,
+      "h": 1,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 8568.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 23,
+      "h": 2,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 8568.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 23,
+      "h": 3,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 8568.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 23,
+      "h": 4,
+      "fecha": "2020-09-12",
+      "real": 5592,
+      "pronostico": 8568.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 23,
+      "h": 1,
+      "fecha": "2020-08-22",
+      "real": 10976,
+      "pronostico": 8268.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 23,
+      "h": 2,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 7190.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 23,
+      "h": 3,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 6123.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 23,
+      "h": 4,
+      "fecha": "2020-09-12",
+      "real": 5592,
+      "pronostico": 5067.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 24,
+      "h": 1,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 10976.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 24,
+      "h": 2,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 10976.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 24,
+      "h": 3,
+      "fecha": "2020-09-12",
+      "real": 5592,
+      "pronostico": 10976.0
+    },
+    {
+      "modelo": "ingenuo",
+      "origen": 24,
+      "h": 4,
+      "fecha": "2020-09-19",
+      "real": 4879,
+      "pronostico": 10976.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 24,
+      "h": 1,
+      "fecha": "2020-08-29",
+      "real": 6974,
+      "pronostico": 10201.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 24,
+      "h": 2,
+      "fecha": "2020-09-05",
+      "real": 5171,
+      "pronostico": 10210.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 24,
+      "h": 3,
+      "fecha": "2020-09-12",
+      "real": 5592,
+      "pronostico": 10218.0
+    },
+    {
+      "modelo": "holt",
+      "origen": 24,
+      "h": 4,
+      "fecha": "2020-09-19",
+      "real": 4879,
+      "pronostico": 10226.0
+    }
+  ],
+  "proyeccion": {
+    "modelo": "holt",
+    "nombre": "Holt amortiguado",
+    "semanas": [
+      {
+        "fecha": "2020-09-26",
+        "h": 1,
+        "pronostico": 3446.0,
+        "inferior_80": 654.0,
+        "superior_80": 4402.0,
+        "inferior_95": 247.0,
+        "superior_95": 5637.0
+      },
+      {
+        "fecha": "2020-10-03",
+        "h": 2,
+        "pronostico": 2519.0,
+        "inferior_80": 0.0,
+        "superior_80": 3482.0,
+        "inferior_95": 0.0,
+        "superior_95": 4298.0
+      },
+      {
+        "fecha": "2020-10-10",
+        "h": 3,
+        "pronostico": 1602.0,
+        "inferior_80": 0.0,
+        "superior_80": 2310.0,
+        "inferior_95": 0.0,
+        "superior_95": 3404.0
+      },
+      {
+        "fecha": "2020-10-17",
+        "h": 4,
+        "pronostico": 693.0,
+        "inferior_80": 0.0,
+        "superior_80": 2261.0,
+        "inferior_95": 0.0,
+        "superior_95": 3543.0
+      }
+    ]
+  },
+  "proyeccion_arima": {
+    "orden": [
+      1,
+      1,
+      2
+    ],
+    "aic": 22.94,
+    "semanas": [
+      {
+        "fecha": "2020-09-26",
+        "h": 1,
+        "pronostico": 3609.0,
+        "inferior_80": 2462.0,
+        "superior_80": 5289.0,
+        "inferior_95": 2011.0,
+        "superior_95": 6475.0
+      },
+      {
+        "fecha": "2020-10-03",
+        "h": 2,
+        "pronostico": 2948.0,
+        "inferior_80": 1906.0,
+        "superior_80": 4559.0,
+        "inferior_95": 1513.0,
+        "superior_95": 5742.0
+      },
+      {
+        "fecha": "2020-10-10",
+        "h": 3,
+        "pronostico": 2416.0,
+        "inferior_80": 1411.0,
+        "superior_80": 4136.0,
+        "inferior_95": 1061.0,
+        "superior_95": 5498.0
+      },
+      {
+        "fecha": "2020-10-17",
+        "h": 4,
+        "pronostico": 1986.0,
+        "inferior_80": 1004.0,
+        "superior_80": 3925.0,
+        "inferior_95": 700.0,
+        "superior_95": 5630.0
+      }
+    ]
+  },
+  "ordenes_arima": [
+    {
+      "origen": 12,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 13,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 14,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 15,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 16,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 17,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 18,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 19,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 20,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 21,
+      "orden": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "origen": 22,
+      "orden": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "origen": 23,
+      "orden": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "origen": 24,
+      "orden": [
+        2,
+        1,
+        2
+      ]
+    }
+  ],
+  "ips": {
+    "ventana_dias": 14,
+    "tipo_camas": "totales",
+    "paises": [
+      {
+        "pais": "Bolivia",
+        "nombre": "Bolivia",
+        "es_foco": true,
+        "camas": 12840,
+        "ips_pico": 1.757,
+        "fecha_pico": "2020-07-28",
+        "casos_14d_pico": 22561,
+        "ips_corte": 0.815
+      },
+      {
+        "pais": "Argentina",
+        "nombre": "Argentina",
+        "es_foco": false,
+        "camas": 225979,
+        "ips_pico": 0.666,
+        "fecha_pico": "2020-09-19",
+        "casos_14d_pico": 150515,
+        "ips_corte": 0.666
+      },
+      {
+        "pais": "Brazil",
+        "nombre": "Brasil",
+        "es_foco": false,
+        "camas": 467631,
+        "ips_pico": 1.373,
+        "fecha_pico": "2020-08-05",
+        "casos_14d_pico": 642267,
+        "ips_corte": 0.86
+      },
+      {
+        "pais": "Chile",
+        "nombre": "Chile",
+        "es_foco": false,
+        "camas": 40335,
+        "ips_pico": 2.702,
+        "fecha_pico": "2020-06-21",
+        "casos_14d_pico": 109003,
+        "ips_corte": 0.604
+      },
+      {
+        "pais": "Colombia",
+        "nombre": "Colombia",
+        "es_foco": false,
+        "camas": 87010,
+        "ips_pico": 1.798,
+        "fecha_pico": "2020-08-20",
+        "casos_14d_pico": 156464,
+        "ips_corte": 1.154
+      },
+      {
+        "pais": "Ecuador",
+        "nombre": "Ecuador",
+        "es_foco": false,
+        "camas": 26465,
+        "ips_pico": 0.822,
+        "fecha_pico": "2020-05-05",
+        "casos_14d_pico": 21753,
+        "ips_corte": 0.263
+      },
+      {
+        "pais": "Paraguay",
+        "nombre": "Paraguay",
+        "es_foco": false,
+        "camas": 9272,
+        "ips_pico": 1.237,
+        "fecha_pico": "2020-09-19",
+        "casos_14d_pico": 11473,
+        "ips_corte": 1.237
+      },
+      {
+        "pais": "Peru",
+        "nombre": "Perú",
+        "es_foco": false,
+        "camas": 52755,
+        "ips_pico": 2.231,
+        "fecha_pico": "2020-08-26",
+        "casos_14d_pico": 117702,
+        "ips_corte": 1.508
+      }
+    ],
+    "escenarios": [
+      {
+        "incremento_pct": 0,
+        "camas": 12840,
+        "ips_pico": 1.757
+      },
+      {
+        "incremento_pct": 25,
+        "camas": 16050,
+        "ips_pico": 1.406
+      },
+      {
+        "incremento_pct": 50,
+        "camas": 19260,
+        "ips_pico": 1.171
+      },
+      {
+        "incremento_pct": 100,
+        "camas": 25680,
+        "ips_pico": 0.879
+      }
+    ],
+    "mediana_ips_pico_otros": 1.373,
+    "camas_necesarias": 16432,
+    "camas_adicionales": 3592,
+    "incremento_necesario_pct": 28.0
+  }
+}

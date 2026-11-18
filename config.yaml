@@ -1,0 +1,383 @@
+# =============================================================================
+# Configuración única del estudio
+# -----------------------------------------------------------------------------
+# Para repetir el análisis con otro país o periodo, basta con editar este
+# archivo. Ningún script contiene umbrales, fechas, países ni textos con valores
+# escritos a mano: todo se lee de aquí o de los resultados calculados.
+# =============================================================================
+
+proyecto:
+  titulo: "Respuesta sanitaria de Bolivia frente al COVID-19"
+  autor: "Henry Pilco Cussy"
+  institucion: "Universidad Privada Franz Tamayo"
+  carrera: "Ingeniería de Sistemas"
+
+# Semilla única para todo procedimiento aleatorio (k-means, bosques, validación).
+semilla: 42
+
+# -----------------------------------------------------------------------------
+# Archivos de entrada (rutas relativas a la raíz del proyecto)
+# -----------------------------------------------------------------------------
+archivos:
+  municipios: "datos/crudos/mun_covid_se30.csv"
+  owid: "datos/crudos/owid-covid-data.csv"
+
+# Nombres que se asignan a las columnas del archivo municipal, en su orden
+# original. Se asignan por posición para no depender de los encabezados crudos.
+columnas_municipios:
+  - cod_departamento
+  - departamento
+  - cod_municipio
+  - municipio
+  - semana
+  - confirmados
+  - activos
+  - fallecidos
+  - recuperados
+
+# Columnas de OWID que se conservan en los datos procesados (ver DICCIONARIO_DATOS.md).
+columnas_owid:
+  - iso_code
+  - continent
+  - location
+  - date
+  - total_cases
+  - new_cases
+  - total_deaths
+  - total_cases_per_million
+  - new_cases_per_million
+  - total_deaths_per_million
+  - total_tests_per_thousand
+  - stringency_index
+  - population
+  - hospital_beds_per_thousand
+  - human_development_index
+  - median_age
+
+# -----------------------------------------------------------------------------
+# País foco y comparación internacional
+# -----------------------------------------------------------------------------
+pais:
+  nombre: "Bolivia"            # tal como aparece en la columna `location` de OWID
+  iso: "BOL"
+  comparacion:                 # países vecinos o de referencia (nombres OWID)
+    - "Argentina"
+    - "Brazil"
+    - "Chile"
+    - "Colombia"
+    - "Ecuador"
+    - "Paraguay"
+    - "Peru"
+  # Traducción de nombres para gráficos y tablas (los que no figuran se muestran como en OWID)
+  nombres_es:
+    Bolivia: "Bolivia"
+    Argentina: "Argentina"
+    Brazil: "Brasil"
+    Chile: "Chile"
+    Colombia: "Colombia"
+    Ecuador: "Ecuador"
+    Paraguay: "Paraguay"
+    Peru: "Perú"
+    Australia: "Australia"
+    Austria: "Austria"
+    Bahrain: "Baréin"
+    Bangladesh: "Bangladés"
+    Belarus: "Bielorrusia"
+    Belgium: "Bélgica"
+    Bulgaria: "Bulgaria"
+    Canada: "Canadá"
+    Costa Rica: "Costa Rica"
+    Croatia: "Croacia"
+    Cuba: "Cuba"
+    Czech Republic: "Chequia"
+    Denmark: "Dinamarca"
+    Dominican Republic: "República Dominicana"
+    El Salvador: "El Salvador"
+    Estonia: "Estonia"
+    Ethiopia: "Etiopía"
+    Fiji: "Fiyi"
+    Finland: "Finlandia"
+    Germany: "Alemania"
+    Ghana: "Ghana"
+    Greece: "Grecia"
+    Hungary: "Hungría"
+    Iceland: "Islandia"
+    India: "India"
+    Indonesia: "Indonesia"
+    Iran: "Irán"
+    Iraq: "Irak"
+    Ireland: "Irlanda"
+    Israel: "Israel"
+    Italy: "Italia"
+    Japan: "Japón"
+    Jordan: "Jordania"
+    Kazakhstan: "Kazajistán"
+    Kenya: "Kenia"
+    Kuwait: "Kuwait"
+    Latvia: "Letonia"
+    Libya: "Libia"
+    Lithuania: "Lituania"
+    Luxembourg: "Luxemburgo"
+    Malawi: "Malaui"
+    Malaysia: "Malasia"
+    Mexico: "México"
+    Morocco: "Marruecos"
+    Mozambique: "Mozambique"
+    Myanmar: "Birmania"
+    Nepal: "Nepal"
+    Netherlands: "Países Bajos"
+    New Zealand: "Nueva Zelanda"
+    Norway: "Noruega"
+    Pakistan: "Pakistán"
+    Panama: "Panamá"
+    Philippines: "Filipinas"
+    Poland: "Polonia"
+    Portugal: "Portugal"
+    Qatar: "Catar"
+    Romania: "Rumania"
+    Russia: "Rusia"
+    Saudi Arabia: "Arabia Saudita"
+    Serbia: "Serbia"
+    Singapore: "Singapur"
+    Slovakia: "Eslovaquia"
+    Slovenia: "Eslovenia"
+    South Africa: "Sudáfrica"
+    South Korea: "Corea del Sur"
+    Spain: "España"
+    Sri Lanka: "Sri Lanka"
+    Switzerland: "Suiza"
+    Thailand: "Tailandia"
+    Togo: "Togo"
+    Tunisia: "Túnez"
+    Turkey: "Turquía"
+    Uganda: "Uganda"
+    Ukraine: "Ucrania"
+    United Arab Emirates: "Emiratos Árabes Unidos"
+    United Kingdom: "Reino Unido"
+    United States: "Estados Unidos"
+    Uruguay: "Uruguay"
+    Vietnam: "Vietnam"
+    Zambia: "Zambia"
+    Zimbabwe: "Zimbabue"
+
+# Fecha de corte de la base OWID (último día que se usa).
+fecha_corte: "2020-09-19"
+
+# -----------------------------------------------------------------------------
+# Datos municipales
+# -----------------------------------------------------------------------------
+municipios:
+  semana_inicio: 20
+  semana_fin: 30               # semana objetivo del Modelo 3 y del cierre del EDA
+  semana_referencia: 27        # semana de la que salen las variables del Modelo 3
+  umbral_letalidad: 3.7        # % ; letalidad "alta" (Modelo 3)
+  min_casos_modelo: 30         # mínimo de confirmados en la semana fin (Modelo 3)
+  min_casos_boxplot: 50        # mínimo de confirmados para el boxplot de letalidad
+  min_municipios_grupo: 2      # un departamento entra a Kruskal-Wallis si tiene al menos
+                               # este número de municipios (un solo valor no tiene dispersión)
+  # Nombres de departamento para mostrar (el archivo crudo los trae en mayúsculas y sin tildes)
+  nombres_departamento:
+    CHUQUISACA: "Chuquisaca"
+    "LA PAZ": "La Paz"
+    COCHABAMBA: "Cochabamba"
+    ORURO: "Oruro"
+    POTOSI: "Potosí"
+    TARIJA: "Tarija"
+    "SANTA CRUZ": "Santa Cruz"
+    BENI: "Beni"
+    PANDO: "Pando"
+
+# -----------------------------------------------------------------------------
+# Análisis exploratorio
+# -----------------------------------------------------------------------------
+eda:
+  ventana_media_movil: 7       # días, para casos por millón suavizados
+  alfa: 0.05                   # nivel de significancia de las pruebas
+  variables_spearman:
+    - confirmados
+    - activos
+    - fallecidos
+    - recuperados
+    - letalidad
+  etiquetas_variables:
+    confirmados: "Confirmados"
+    activos: "Activos"
+    fallecidos: "Fallecidos"
+    recuperados: "Recuperados"
+    letalidad: "Letalidad (%)"
+
+# -----------------------------------------------------------------------------
+# Modelo 1 · Perfiles de países (k-means)
+# -----------------------------------------------------------------------------
+perfiles:
+  # Variables de OWID; `agregacion` indica cómo se resume la serie diaria.
+  variables:
+    - columna: total_deaths_per_million
+      nombre: "Fallecidos por millón"
+      agregacion: ultimo
+    - columna: total_cases_per_million
+      nombre: "Casos por millón"
+      agregacion: ultimo
+    - columna: letalidad
+      nombre: "Letalidad (%)"
+      agregacion: calculada    # total_deaths / total_cases × 100 a la fecha de corte
+    - columna: total_tests_per_thousand
+      nombre: "Pruebas por mil"
+      agregacion: ultimo_disponible
+    - columna: stringency_index
+      nombre: "Rigurosidad media"
+      agregacion: media
+    - columna: hospital_beds_per_thousand
+      nombre: "Camas por mil"
+      agregacion: ultimo
+    - columna: human_development_index
+      nombre: "IDH"
+      agregacion: ultimo
+    - columna: median_age
+      nombre: "Edad mediana"
+      agregacion: ultimo
+  prefijo_agregados: "OWID_"   # códigos ISO de agregados (mundo, continentes) a excluir
+  # true: las variables "ultimo" y "calculada" se toman de la fila de la fecha de corte; un
+  # país sin registro ese día queda fuera (España no informó el sábado 19/09/2020).
+  # false: se usa el último dato disponible hasta la fecha de corte (entra España: 89 países).
+  exigir_dato_en_fecha_corte: true
+  # Nombres de los grupos: se describen con los rasgos de mayor |z| medio del grupo.
+  n_rasgos_nombre: 2
+  umbral_z_nombre: 0.5         # un rasgo cuenta si su media estandarizada supera ±0,5 DE
+  nombre_sin_rasgos: "Perfil intermedio"
+  descriptores:                # texto para valores altos / bajos de cada variable
+    total_deaths_per_million: {alto: "alta mortalidad", bajo: "baja mortalidad"}
+    total_cases_per_million: {alto: "muchos casos", bajo: "pocos casos"}
+    letalidad: {alto: "letalidad alta", bajo: "letalidad baja"}
+    total_tests_per_thousand: {alto: "muchas pruebas", bajo: "pocas pruebas"}
+    stringency_index: {alto: "medidas estrictas", bajo: "medidas laxas"}
+    hospital_beds_per_thousand: {alto: "muchas camas", bajo: "pocas camas"}
+    human_development_index: {alto: "IDH alto", bajo: "IDH bajo"}
+    median_age: {alto: "población envejecida", bajo: "población joven"}
+  n_inicios: 50                # n_init de k-means
+  n_semillas_estabilidad: 50   # corridas con semillas distintas para el ARI
+  n_componentes_pca: 2
+  n_vecinos: 5                 # vecinos más cercanos al país foco
+  muestras:
+    regional:
+      etiqueta: "Sudamérica"
+      k_min: 2
+      k_max: 4
+      k_minimo_aceptado: 2
+    mundial:
+      etiqueta: "Mundial, datos completos"
+      k_min: 2
+      k_max: 8
+      k_minimo_aceptado: 3     # evita la partición trivial en dos grupos
+
+# -----------------------------------------------------------------------------
+# Modelo 2 · Pronóstico semanal + índice de presión sanitaria
+# -----------------------------------------------------------------------------
+series:
+  fecha_inicio: "2020-03-14"   # primera semana (fecha de cierre de la semana)
+  dia_cierre_semana: "SAT"     # semanas que terminan en sábado (19/09/2020 es sábado)
+  horizonte: 4                 # semanas a pronosticar
+  primer_origen: 12            # número de semanas de entrenamiento del primer corte
+  ventana_media_movil: 3
+  ventana_lineal: 6
+  grado_polinomio: 2
+  arima_p_max: 2
+  arima_q_max: 2
+  arima_d: 1
+  holt_inicializacion: "estimated"   # método de statsmodels para el nivel y la tendencia iniciales
+  metrica_seleccion: "rmse"    # métrica con la que se elige el mejor modelo
+  niveles_intervalo: [80, 95]  # % de los intervalos empíricos
+  modelo_referencia_mase: "ingenuo"
+  nombres_modelos:
+    ingenuo: "Ingenuo"
+    media_movil: "Media móvil (3 sem.)"
+    lineal: "Regresión lineal (últimas 6)"
+    polinomica: "Polinómica (grado 2)"
+    holt: "Holt amortiguado"
+    arima: "ARIMA sobre log1p"
+  # Índice de presión sanitaria
+  ips_ventana_dias: 14
+  escenarios_camas: [0, 25, 50, 100]   # % de camas adicionales
+
+# -----------------------------------------------------------------------------
+# Modelo 3 · Riesgo de letalidad alta por municipio
+# -----------------------------------------------------------------------------
+riesgo:
+  arbol:
+    max_depth: 3
+    min_samples_leaf: 5
+  bosque:
+    n_estimators: 300
+    max_depth: 4
+    min_samples_leaf: 3
+  logistica:
+    max_iter: 1000
+  validacion:
+    n_pliegues: 5
+    n_repeticiones: 20
+    nivel_confianza: 0.95
+  metrica_principal: "f1"      # métrica con la que se compara cada modelo con la persistencia
+  permutacion:
+    n_repeticiones: 10         # permutaciones por variable y pliegue
+    n_repeticiones_cv: 4       # repeticiones de la validación 5 × r usadas para la importancia
+    metrica: "roc_auc"
+    modelo: "bosque"
+    conjunto: "B"
+  nombres_modelos:
+    arbol: "Árbol de decisión"
+    bosque: "Bosque aleatorio"
+    logistica: "Regresión logística"
+    mayoritaria: "Clase mayoritaria"
+    persistencia: "Persistencia (letalidad SE 27 ≥ umbral)"
+  nombres_metricas:
+    accuracy: "Exactitud"
+    precision: "Precisión"
+    recall: "Sensibilidad"
+    f1: "F1"
+    roc_auc: "AUC"
+  nombres_variables:
+    log10_confirmados: "log₁₀ confirmados (SE 27)"
+    departamento: "Departamento"
+    letalidad_ref: "Letalidad (SE 27)"
+    fallecidos_ref: "Fallecidos (SE 27)"
+
+# -----------------------------------------------------------------------------
+# Figuras
+# -----------------------------------------------------------------------------
+figuras:
+  fuente: "DejaVu Sans"
+  dpi: 150
+  formato: "png"
+  color_foco: "#B2182B"        # Bolivia siempre en rojo
+  color_secundario: "#2166AC"  # azul
+  color_neutro: "#9E9E9E"      # gris para el resto
+  tamano_base: [8, 4.5]        # pulgadas
+  separador_decimal: ","
+  separador_miles: " "
+  meses:
+    - "ene"
+    - "feb"
+    - "mar"
+    - "abr"
+    - "may"
+    - "jun"
+    - "jul"
+    - "ago"
+    - "sep"
+    - "oct"
+    - "nov"
+    - "dic"
+
+# -----------------------------------------------------------------------------
+# Página web
+# -----------------------------------------------------------------------------
+web:
+  plantilla: "index.html.j2"
+  salida: "docs/index.html"
+  idioma: "es"
+  fuente_titulos: "Source Serif 4"
+  fuente_texto: "Inter"
+  umbral_silueta_debil: 0.25   # por debajo, la página advierte que la estructura de grupos es débil
+  simulador:
+    max_pct: 200               # máximo de camas adicionales (%) en el control deslizante
+    paso_pct: 5

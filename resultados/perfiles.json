@@ -1,0 +1,1413 @@
+{
+  "variables": [
+    {
+      "columna": "total_deaths_per_million",
+      "nombre": "Fallecidos por millón",
+      "agregacion": "ultimo"
+    },
+    {
+      "columna": "total_cases_per_million",
+      "nombre": "Casos por millón",
+      "agregacion": "ultimo"
+    },
+    {
+      "columna": "letalidad",
+      "nombre": "Letalidad (%)",
+      "agregacion": "calculada"
+    },
+    {
+      "columna": "total_tests_per_thousand",
+      "nombre": "Pruebas por mil",
+      "agregacion": "ultimo_disponible"
+    },
+    {
+      "columna": "stringency_index",
+      "nombre": "Rigurosidad media",
+      "agregacion": "media"
+    },
+    {
+      "columna": "hospital_beds_per_thousand",
+      "nombre": "Camas por mil",
+      "agregacion": "ultimo"
+    },
+    {
+      "columna": "human_development_index",
+      "nombre": "IDH",
+      "agregacion": "ultimo"
+    },
+    {
+      "columna": "median_age",
+      "nombre": "Edad mediana",
+      "agregacion": "ultimo"
+    }
+  ],
+  "exigir_dato_en_fecha_corte": true,
+  "cobertura": {
+    "total_paises": 209,
+    "incluidos": 88,
+    "excluidos": 121,
+    "faltantes_por_variable": {
+      "total_deaths_per_million": 2,
+      "total_cases_per_million": 2,
+      "letalidad": 2,
+      "total_tests_per_thousand": 112,
+      "stringency_index": 30,
+      "hospital_beds_per_thousand": 46,
+      "human_development_index": 31,
+      "median_age": 25
+    },
+    "sin_registro_en_fecha_corte": [
+      "Spain"
+    ]
+  },
+  "regional": {
+    "etiqueta": "Sudamérica",
+    "n_paises": 8,
+    "paises": [
+      "Bolivia",
+      "Argentina",
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Ecuador",
+      "Paraguay",
+      "Peru"
+    ],
+    "siluetas": [
+      {
+        "k": 2,
+        "silueta": 0.1741,
+        "tamanos": [
+          3,
+          5
+        ]
+      },
+      {
+        "k": 3,
+        "silueta": 0.1249,
+        "tamanos": [
+          4,
+          1,
+          3
+        ]
+      },
+      {
+        "k": 4,
+        "silueta": 0.1031,
+        "tamanos": [
+          3,
+          1,
+          3,
+          1
+        ]
+      }
+    ],
+    "k": 2,
+    "k_minimo_aceptado": 2,
+    "silueta": 0.1741,
+    "ari_ward": 0.4948,
+    "estabilidad": {
+      "procedimiento": {
+        "corridas": 50,
+        "inicios_por_corrida": 50,
+        "media": 1.0,
+        "minimo": 1.0,
+        "proporcion_identica": 1.0
+      },
+      "inicio_unico": {
+        "corridas": 50,
+        "inicios_por_corrida": 1,
+        "media": 0.2116,
+        "minimo": -0.1034,
+        "proporcion_identica": 0.12
+      }
+    },
+    "coasignacion_foco": {
+      "Ecuador": 1.0,
+      "Paraguay": 1.0
+    },
+    "asignacion": {
+      "Bolivia": 2,
+      "Argentina": 1,
+      "Brazil": 1,
+      "Chile": 1,
+      "Colombia": 1,
+      "Ecuador": 2,
+      "Paraguay": 2,
+      "Peru": 1
+    },
+    "grupos": [
+      {
+        "grupo": 1,
+        "nombre": "Población envejecida y muchos casos",
+        "tamano": 5,
+        "contiene_foco": false,
+        "miembros": [
+          "Argentina",
+          "Brazil",
+          "Chile",
+          "Colombia",
+          "Peru"
+        ],
+        "miembros_es": [
+          "Argentina",
+          "Brasil",
+          "Chile",
+          "Colombia",
+          "Perú"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 594.1748,
+          "total_cases_per_million": 19063.2434,
+          "letalidad": 3.0331,
+          "total_tests_per_thousand": 57.7646,
+          "stringency_index": 74.125,
+          "hospital_beds_per_thousand": 2.524,
+          "human_development_index": 0.7848,
+          "median_age": 32.42
+        },
+        "perfil_z": {
+          "total_deaths_per_million": 0.215,
+          "total_cases_per_million": 0.6445,
+          "letalidad": -0.4274,
+          "total_tests_per_thousand": 0.2882,
+          "stringency_index": -0.0946,
+          "hospital_beds_per_thousand": 0.3948,
+          "human_development_index": 0.5279,
+          "median_age": 0.6537
+        }
+      },
+      {
+        "grupo": 2,
+        "nombre": "Población joven y pocos casos",
+        "tamano": 3,
+        "contiene_foco": true,
+        "miembros": [
+          "Bolivia",
+          "Ecuador",
+          "Paraguay"
+        ],
+        "miembros_es": [
+          "Bolivia",
+          "Ecuador",
+          "Paraguay"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 452.8077,
+          "total_cases_per_million": 7560.3387,
+          "letalidad": 5.5348,
+          "total_tests_per_thousand": 24.9427,
+          "stringency_index": 76.9515,
+          "hospital_beds_per_thousand": 1.3,
+          "human_development_index": 0.7157,
+          "median_age": 26.6667
+        },
+        "perfil_z": {
+          "total_deaths_per_million": -0.3584,
+          "total_cases_per_million": -1.0741,
+          "letalidad": 0.7124,
+          "total_tests_per_thousand": -0.4803,
+          "stringency_index": 0.1577,
+          "hospital_beds_per_thousand": -0.658,
+          "human_development_index": -0.8799,
+          "median_age": -1.0895
+        }
+      }
+    ],
+    "grupo_foco": 2,
+    "pca": {
+      "varianza_explicada": [
+        0.4331,
+        0.239
+      ],
+      "cargas": {
+        "total_deaths_per_million": [
+          0.0676,
+          0.6641
+        ],
+        "total_cases_per_million": [
+          0.3994,
+          0.343
+        ],
+        "letalidad": [
+          -0.2757,
+          0.4638
+        ],
+        "total_tests_per_thousand": [
+          0.3744,
+          0.0009
+        ],
+        "stringency_index": [
+          -0.1391,
+          -0.3036
+        ],
+        "hospital_beds_per_thousand": [
+          0.3051,
+          -0.3603
+        ],
+        "human_development_index": [
+          0.4928,
+          -0.0315
+        ],
+        "median_age": [
+          0.5141,
+          0.0561
+        ]
+      },
+      "coordenadas": {
+        "Bolivia": [
+          -2.4613,
+          0.3466
+        ],
+        "Argentina": [
+          1.5983,
+          -2.2083
+        ],
+        "Brazil": [
+          1.1427,
+          0.9296
+        ],
+        "Chile": [
+          3.3016,
+          0.4849
+        ],
+        "Colombia": [
+          0.2269,
+          -0.3332
+        ],
+        "Ecuador": [
+          -1.6494,
+          1.4651
+        ],
+        "Paraguay": [
+          -2.0274,
+          -2.1739
+        ],
+        "Peru": [
+          -0.1315,
+          1.4891
+        ]
+      }
+    },
+    "vecinos_foco": [
+      {
+        "pais": "Peru",
+        "nombre": "Perú",
+        "distancia": 2.9065
+      },
+      {
+        "pais": "Colombia",
+        "nombre": "Colombia",
+        "distancia": 3.0766
+      },
+      {
+        "pais": "Paraguay",
+        "nombre": "Paraguay",
+        "distancia": 3.1634
+      },
+      {
+        "pais": "Ecuador",
+        "nombre": "Ecuador",
+        "distancia": 3.5234
+      },
+      {
+        "pais": "Brazil",
+        "nombre": "Brasil",
+        "distancia": 4.6759
+      }
+    ],
+    "foco": {
+      "valores": {
+        "total_deaths_per_million": 646.79,
+        "total_cases_per_million": 11141.153,
+        "letalidad": 5.8054,
+        "total_tests_per_thousand": 23.785,
+        "stringency_index": 89.8952,
+        "hospital_beds_per_thousand": 1.1,
+        "human_development_index": 0.693,
+        "median_age": 25.4
+      },
+      "z": {
+        "total_deaths_per_million": 0.4284,
+        "total_cases_per_million": -0.5391,
+        "letalidad": 0.8356,
+        "total_tests_per_thousand": -0.5074,
+        "stringency_index": 1.3132,
+        "hospital_beds_per_thousand": -0.8301,
+        "human_development_index": -1.3415,
+        "median_age": -1.4733
+      }
+    }
+  },
+  "mundial": {
+    "etiqueta": "Mundial, datos completos",
+    "n_paises": 88,
+    "paises": [
+      "Argentina",
+      "Australia",
+      "Austria",
+      "Bahrain",
+      "Bangladesh",
+      "Belarus",
+      "Belgium",
+      "Bolivia",
+      "Brazil",
+      "Bulgaria",
+      "Canada",
+      "Chile",
+      "Colombia",
+      "Costa Rica",
+      "Croatia",
+      "Cuba",
+      "Czech Republic",
+      "Denmark",
+      "Dominican Republic",
+      "Ecuador",
+      "El Salvador",
+      "Estonia",
+      "Ethiopia",
+      "Fiji",
+      "Finland",
+      "Germany",
+      "Ghana",
+      "Greece",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Iraq",
+      "Ireland",
+      "Israel",
+      "Italy",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kenya",
+      "Kuwait",
+      "Latvia",
+      "Libya",
+      "Lithuania",
+      "Luxembourg",
+      "Malawi",
+      "Malaysia",
+      "Mexico",
+      "Morocco",
+      "Mozambique",
+      "Myanmar",
+      "Nepal",
+      "Netherlands",
+      "New Zealand",
+      "Norway",
+      "Pakistan",
+      "Panama",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Qatar",
+      "Romania",
+      "Russia",
+      "Saudi Arabia",
+      "Serbia",
+      "Singapore",
+      "Slovakia",
+      "Slovenia",
+      "South Africa",
+      "South Korea",
+      "Sri Lanka",
+      "Switzerland",
+      "Thailand",
+      "Togo",
+      "Tunisia",
+      "Turkey",
+      "Uganda",
+      "Ukraine",
+      "United Arab Emirates",
+      "United Kingdom",
+      "United States",
+      "Uruguay",
+      "Vietnam",
+      "Zambia",
+      "Zimbabwe"
+    ],
+    "siluetas": [
+      {
+        "k": 2,
+        "silueta": 0.2884,
+        "tamanos": [
+          43,
+          45
+        ]
+      },
+      {
+        "k": 3,
+        "silueta": 0.3172,
+        "tamanos": [
+          36,
+          31,
+          21
+        ]
+      },
+      {
+        "k": 4,
+        "silueta": 0.3438,
+        "tamanos": [
+          16,
+          33,
+          7,
+          32
+        ]
+      },
+      {
+        "k": 5,
+        "silueta": 0.3531,
+        "tamanos": [
+          28,
+          32,
+          13,
+          9,
+          6
+        ]
+      },
+      {
+        "k": 6,
+        "silueta": 0.278,
+        "tamanos": [
+          10,
+          5,
+          28,
+          23,
+          9,
+          13
+        ]
+      },
+      {
+        "k": 7,
+        "silueta": 0.2912,
+        "tamanos": [
+          21,
+          31,
+          9,
+          3,
+          4,
+          13,
+          7
+        ]
+      },
+      {
+        "k": 8,
+        "silueta": 0.2813,
+        "tamanos": [
+          20,
+          28,
+          9,
+          4,
+          4,
+          7,
+          3,
+          13
+        ]
+      }
+    ],
+    "k": 5,
+    "k_minimo_aceptado": 3,
+    "silueta": 0.3531,
+    "ari_ward": 0.7457,
+    "estabilidad": {
+      "procedimiento": {
+        "corridas": 50,
+        "inicios_por_corrida": 50,
+        "media": 0.9788,
+        "minimo": 0.934,
+        "proporcion_identica": 0.34
+      },
+      "inicio_unico": {
+        "corridas": 50,
+        "inicios_por_corrida": 1,
+        "media": 0.7903,
+        "minimo": 0.4481,
+        "proporcion_identica": 0.0
+      }
+    },
+    "coasignacion_foco": {
+      "Argentina": 1.0,
+      "Brazil": 1.0,
+      "Chile": 1.0,
+      "Colombia": 1.0,
+      "Costa Rica": 1.0,
+      "Kuwait": 1.0,
+      "United States": 1.0,
+      "Panama": 1.0,
+      "Peru": 1.0,
+      "Saudi Arabia": 1.0,
+      "South Africa": 0.98,
+      "Qatar": 0.66,
+      "Kazakhstan": 0.58,
+      "Israel": 0.06
+    },
+    "asignacion": {
+      "Argentina": 2,
+      "Australia": 4,
+      "Austria": 4,
+      "Bahrain": 3,
+      "Bangladesh": 5,
+      "Belarus": 4,
+      "Belgium": 1,
+      "Bolivia": 2,
+      "Brazil": 2,
+      "Bulgaria": 4,
+      "Canada": 1,
+      "Chile": 2,
+      "Colombia": 2,
+      "Costa Rica": 2,
+      "Croatia": 4,
+      "Cuba": 4,
+      "Czech Republic": 4,
+      "Denmark": 3,
+      "Dominican Republic": 5,
+      "Ecuador": 1,
+      "El Salvador": 5,
+      "Estonia": 4,
+      "Ethiopia": 5,
+      "Fiji": 5,
+      "Finland": 4,
+      "Germany": 4,
+      "Ghana": 5,
+      "Greece": 4,
+      "Hungary": 4,
+      "Iceland": 4,
+      "India": 5,
+      "Indonesia": 5,
+      "Iran": 1,
+      "Iraq": 5,
+      "Ireland": 1,
+      "Israel": 3,
+      "Italy": 1,
+      "Japan": 4,
+      "Jordan": 5,
+      "Kazakhstan": 2,
+      "Kenya": 5,
+      "Kuwait": 2,
+      "Latvia": 4,
+      "Libya": 5,
+      "Lithuania": 4,
+      "Luxembourg": 3,
+      "Malawi": 5,
+      "Malaysia": 5,
+      "Mexico": 1,
+      "Morocco": 5,
+      "Mozambique": 5,
+      "Myanmar": 5,
+      "Nepal": 5,
+      "Netherlands": 1,
+      "New Zealand": 4,
+      "Norway": 4,
+      "Pakistan": 5,
+      "Panama": 2,
+      "Paraguay": 5,
+      "Peru": 2,
+      "Philippines": 5,
+      "Poland": 4,
+      "Portugal": 4,
+      "Qatar": 3,
+      "Romania": 4,
+      "Russia": 4,
+      "Saudi Arabia": 2,
+      "Serbia": 4,
+      "Singapore": 4,
+      "Slovakia": 4,
+      "Slovenia": 4,
+      "South Africa": 2,
+      "South Korea": 4,
+      "Sri Lanka": 4,
+      "Switzerland": 4,
+      "Thailand": 4,
+      "Togo": 5,
+      "Tunisia": 5,
+      "Turkey": 5,
+      "Uganda": 5,
+      "Ukraine": 4,
+      "United Arab Emirates": 3,
+      "United Kingdom": 1,
+      "United States": 2,
+      "Uruguay": 4,
+      "Vietnam": 5,
+      "Zambia": 5,
+      "Zimbabwe": 5
+    },
+    "grupos": [
+      {
+        "grupo": 1,
+        "nombre": "Letalidad alta y alta mortalidad",
+        "tamano": 9,
+        "contiene_foco": false,
+        "miembros": [
+          "Belgium",
+          "Canada",
+          "Ecuador",
+          "Iran",
+          "Ireland",
+          "Italy",
+          "Mexico",
+          "Netherlands",
+          "United Kingdom"
+        ],
+        "miembros_es": [
+          "Bélgica",
+          "Canadá",
+          "Ecuador",
+          "Irlanda",
+          "Irán",
+          "Italia",
+          "México",
+          "Países Bajos",
+          "Reino Unido"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 501.1377,
+          "total_cases_per_million": 5781.4308,
+          "letalidad": 8.5678,
+          "total_tests_per_thousand": 129.9097,
+          "stringency_index": 49.8596,
+          "hospital_beds_per_thousand": 2.7244,
+          "human_development_index": 0.8708,
+          "median_age": 38.1778
+        },
+        "perfil_z": {
+          "total_deaths_per_million": 1.6034,
+          "total_cases_per_million": -0.0496,
+          "letalidad": 2.4376,
+          "total_tests_per_thousand": 0.0573,
+          "stringency_index": -0.4584,
+          "hospital_beds_per_thousand": -0.2434,
+          "human_development_index": 0.705,
+          "median_age": 0.4709
+        }
+      },
+      {
+        "grupo": 2,
+        "nombre": "Muchos casos y alta mortalidad",
+        "tamano": 13,
+        "contiene_foco": true,
+        "miembros": [
+          "Argentina",
+          "Bolivia",
+          "Brazil",
+          "Chile",
+          "Colombia",
+          "Costa Rica",
+          "Kazakhstan",
+          "Kuwait",
+          "Panama",
+          "Peru",
+          "Saudi Arabia",
+          "South Africa",
+          "United States"
+        ],
+        "miembros_es": [
+          "Arabia Saudita",
+          "Argentina",
+          "Bolivia",
+          "Brasil",
+          "Chile",
+          "Colombia",
+          "Costa Rica",
+          "Estados Unidos",
+          "Kazajistán",
+          "Kuwait",
+          "Panamá",
+          "Perú",
+          "Sudáfrica"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 423.5622,
+          "total_cases_per_million": 16482.8315,
+          "letalidad": 2.5348,
+          "total_tests_per_thousand": 99.3103,
+          "stringency_index": 72.6939,
+          "hospital_beds_per_thousand": 2.5877,
+          "human_development_index": 0.7907,
+          "median_age": 31.7385
+        },
+        "perfil_z": {
+          "total_deaths_per_million": 1.2421,
+          "total_cases_per_million": 1.2948,
+          "letalidad": -0.1087,
+          "total_tests_per_thousand": -0.139,
+          "stringency_index": 1.0131,
+          "hospital_beds_per_thousand": -0.2947,
+          "human_development_index": 0.0787,
+          "median_age": -0.2927
+        }
+      },
+      {
+        "grupo": 3,
+        "nombre": "Muchas pruebas y muchos casos",
+        "tamano": 6,
+        "contiene_foco": false,
+        "miembros": [
+          "Bahrain",
+          "Denmark",
+          "Israel",
+          "Luxembourg",
+          "Qatar",
+          "United Arab Emirates"
+        ],
+        "miembros_es": [
+          "Baréin",
+          "Catar",
+          "Dinamarca",
+          "Emiratos Árabes Unidos",
+          "Israel",
+          "Luxemburgo"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 114.6487,
+          "total_cases_per_million": 20837.4875,
+          "letalidad": 1.0301,
+          "total_tests_per_thousand": 567.0355,
+          "stringency_index": 48.914,
+          "hospital_beds_per_thousand": 2.4,
+          "human_development_index": 0.8835,
+          "median_age": 35.15
+        },
+        "perfil_z": {
+          "total_deaths_per_million": -0.197,
+          "total_cases_per_million": 1.8419,
+          "letalidad": -0.7438,
+          "total_tests_per_thousand": 2.8613,
+          "stringency_index": -0.5194,
+          "hospital_beds_per_thousand": -0.3651,
+          "human_development_index": 0.8045,
+          "median_age": 0.1118
+        }
+      },
+      {
+        "grupo": 4,
+        "nombre": "Población envejecida y muchas camas",
+        "tamano": 32,
+        "contiene_foco": false,
+        "miembros": [
+          "Australia",
+          "Austria",
+          "Belarus",
+          "Bulgaria",
+          "Croatia",
+          "Cuba",
+          "Czech Republic",
+          "Estonia",
+          "Finland",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Japan",
+          "Latvia",
+          "Lithuania",
+          "New Zealand",
+          "Norway",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russia",
+          "Serbia",
+          "Singapore",
+          "Slovakia",
+          "Slovenia",
+          "South Korea",
+          "Sri Lanka",
+          "Switzerland",
+          "Thailand",
+          "Ukraine",
+          "Uruguay"
+        ],
+        "miembros_es": [
+          "Alemania",
+          "Australia",
+          "Austria",
+          "Bielorrusia",
+          "Bulgaria",
+          "Chequia",
+          "Corea del Sur",
+          "Croacia",
+          "Cuba",
+          "Eslovaquia",
+          "Eslovenia",
+          "Estonia",
+          "Finlandia",
+          "Grecia",
+          "Hungría",
+          "Islandia",
+          "Japón",
+          "Letonia",
+          "Lituania",
+          "Noruega",
+          "Nueva Zelanda",
+          "Polonia",
+          "Portugal",
+          "Rumania",
+          "Rusia",
+          "Serbia",
+          "Singapur",
+          "Sri Lanka",
+          "Suiza",
+          "Tailandia",
+          "Ucrania",
+          "Uruguay"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 62.1187,
+          "total_cases_per_million": 3016.8383,
+          "letalidad": 2.2332,
+          "total_tests_per_thousand": 128.7339,
+          "stringency_index": 46.0618,
+          "hospital_beds_per_thousand": 5.8098,
+          "human_development_index": 0.8611,
+          "median_age": 42.0812
+        },
+        "perfil_z": {
+          "total_deaths_per_million": -0.4417,
+          "total_cases_per_million": -0.3969,
+          "letalidad": -0.236,
+          "total_tests_per_thousand": 0.0497,
+          "stringency_index": -0.7032,
+          "hospital_beds_per_thousand": 0.9139,
+          "human_development_index": 0.629,
+          "median_age": 0.9337
+        }
+      },
+      {
+        "grupo": 5,
+        "nombre": "IDH bajo y población joven",
+        "tamano": 28,
+        "contiene_foco": false,
+        "miembros": [
+          "Bangladesh",
+          "Dominican Republic",
+          "El Salvador",
+          "Ethiopia",
+          "Fiji",
+          "Ghana",
+          "India",
+          "Indonesia",
+          "Iraq",
+          "Jordan",
+          "Kenya",
+          "Libya",
+          "Malawi",
+          "Malaysia",
+          "Morocco",
+          "Mozambique",
+          "Myanmar",
+          "Nepal",
+          "Pakistan",
+          "Paraguay",
+          "Philippines",
+          "Togo",
+          "Tunisia",
+          "Turkey",
+          "Uganda",
+          "Vietnam",
+          "Zambia",
+          "Zimbabwe"
+        ],
+        "miembros_es": [
+          "Bangladés",
+          "Birmania",
+          "El Salvador",
+          "Etiopía",
+          "Filipinas",
+          "Fiyi",
+          "Ghana",
+          "India",
+          "Indonesia",
+          "Irak",
+          "Jordania",
+          "Kenia",
+          "Libia",
+          "Malasia",
+          "Malaui",
+          "Marruecos",
+          "Mozambique",
+          "Nepal",
+          "Pakistán",
+          "Paraguay",
+          "República Dominicana",
+          "Togo",
+          "Turquía",
+          "Túnez",
+          "Uganda",
+          "Vietnam",
+          "Zambia",
+          "Zimbabue"
+        ],
+        "perfil": {
+          "total_deaths_per_million": 39.9391,
+          "total_cases_per_million": 1987.1903,
+          "letalidad": 2.0723,
+          "total_tests_per_thousand": 23.7296,
+          "stringency_index": 66.1591,
+          "hospital_beds_per_thousand": 1.3707,
+          "human_development_index": 0.633,
+          "median_age": 24.875
+        },
+        "perfil_z": {
+          "total_deaths_per_million": -0.545,
+          "total_cases_per_million": -0.5263,
+          "letalidad": -0.3039,
+          "total_tests_per_thousand": -0.6238,
+          "stringency_index": 0.592,
+          "hospital_beds_per_thousand": -0.7511,
+          "human_development_index": -1.1545,
+          "median_age": -1.1065
+        }
+      }
+    ],
+    "grupo_foco": 2,
+    "pca": {
+      "varianza_explicada": [
+        0.3843,
+        0.2395
+      ],
+      "cargas": {
+        "total_deaths_per_million": [
+          0.087,
+          0.6583
+        ],
+        "total_cases_per_million": [
+          0.075,
+          0.4821
+        ],
+        "letalidad": [
+          0.1207,
+          0.4157
+        ],
+        "total_tests_per_thousand": [
+          0.3086,
+          0.1359
+        ],
+        "stringency_index": [
+          -0.4113,
+          0.2453
+        ],
+        "hospital_beds_per_thousand": [
+          0.3986,
+          -0.2613
+        ],
+        "human_development_index": [
+          0.5242,
+          0.102
+        ],
+        "median_age": [
+          0.5237,
+          -0.0648
+        ]
+      },
+      "coordenadas": {
+        "Argentina": [
+          -0.3941,
+          0.8323
+        ],
+        "Australia": [
+          1.3226,
+          -0.5247
+        ],
+        "Austria": [
+          2.2271,
+          -1.1044
+        ],
+        "Bahrain": [
+          1.4445,
+          2.0828
+        ],
+        "Bangladesh": [
+          -2.4094,
+          -0.498
+        ],
+        "Belarus": [
+          2.9174,
+          -1.9186
+        ],
+        "Belgium": [
+          2.5042,
+          3.3468
+        ],
+        "Bolivia": [
+          -1.9122,
+          2.9878
+        ],
+        "Brazil": [
+          -0.1148,
+          2.426
+        ],
+        "Bulgaria": [
+          1.5254,
+          -0.777
+        ],
+        "Canada": [
+          1.4011,
+          0.8435
+        ],
+        "Chile": [
+          0.1036,
+          2.9629
+        ],
+        "Colombia": [
+          -1.0096,
+          1.9987
+        ],
+        "Costa Rica": [
+          -0.8669,
+          0.3601
+        ],
+        "Croatia": [
+          1.3371,
+          -1.2157
+        ],
+        "Cuba": [
+          0.0266,
+          -0.922
+        ],
+        "Czech Republic": [
+          1.787,
+          -1.3562
+        ],
+        "Denmark": [
+          2.0404,
+          0.0795
+        ],
+        "Dominican Republic": [
+          -1.0627,
+          0.3008
+        ],
+        "Ecuador": [
+          -0.516,
+          2.7049
+        ],
+        "El Salvador": [
+          -2.1996,
+          0.452
+        ],
+        "Estonia": [
+          1.7211,
+          -1.1962
+        ],
+        "Ethiopia": [
+          -3.5613,
+          -0.6349
+        ],
+        "Fiji": [
+          -0.8664,
+          -0.1993
+        ],
+        "Finland": [
+          1.7179,
+          -0.6543
+        ],
+        "Germany": [
+          2.4425,
+          -0.7255
+        ],
+        "Ghana": [
+          -2.4196,
+          -0.9906
+        ],
+        "Greece": [
+          1.3106,
+          -1.0402
+        ],
+        "Hungary": [
+          1.1644,
+          -0.728
+        ],
+        "Iceland": [
+          1.578,
+          -0.8611
+        ],
+        "India": [
+          -1.7708,
+          -0.4186
+        ],
+        "Indonesia": [
+          -1.1287,
+          -0.4871
+        ],
+        "Iran": [
+          0.1109,
+          0.7475
+        ],
+        "Iraq": [
+          -1.9854,
+          0.5852
+        ],
+        "Ireland": [
+          1.4603,
+          1.2223
+        ],
+        "Israel": [
+          0.79,
+          0.7147
+        ],
+        "Italy": [
+          1.8869,
+          2.821
+        ],
+        "Japan": [
+          3.2045,
+          -2.4112
+        ],
+        "Jordan": [
+          -1.8569,
+          -0.9061
+        ],
+        "Kazakhstan": [
+          -0.2741,
+          -0.2211
+        ],
+        "Kenya": [
+          -2.9029,
+          -0.5712
+        ],
+        "Kuwait": [
+          -0.1471,
+          0.8383
+        ],
+        "Latvia": [
+          1.3207,
+          -1.1315
+        ],
+        "Libya": [
+          -1.662,
+          -0.315
+        ],
+        "Lithuania": [
+          2.0643,
+          -1.2516
+        ],
+        "Luxembourg": [
+          2.6834,
+          0.3638
+        ],
+        "Malawi": [
+          -2.9659,
+          -0.7204
+        ],
+        "Malaysia": [
+          -0.516,
+          -1.1019
+        ],
+        "Mexico": [
+          -0.149,
+          2.6098
+        ],
+        "Morocco": [
+          -1.5915,
+          -0.4545
+        ],
+        "Mozambique": [
+          -3.4629,
+          -1.1037
+        ],
+        "Myanmar": [
+          -2.4936,
+          -0.6971
+        ],
+        "Nepal": [
+          -2.5081,
+          -0.7913
+        ],
+        "Netherlands": [
+          1.8247,
+          1.1474
+        ],
+        "New Zealand": [
+          1.0923,
+          -1.0738
+        ],
+        "Norway": [
+          1.5956,
+          -0.8847
+        ],
+        "Pakistan": [
+          -2.2173,
+          -0.7781
+        ],
+        "Panama": [
+          -0.8406,
+          2.6044
+        ],
+        "Paraguay": [
+          -2.0463,
+          0.0484
+        ],
+        "Peru": [
+          -1.0334,
+          4.1795
+        ],
+        "Philippines": [
+          -1.7663,
+          -0.4772
+        ],
+        "Poland": [
+          1.1653,
+          -0.8812
+        ],
+        "Portugal": [
+          0.9783,
+          0.3356
+        ],
+        "Qatar": [
+          0.1991,
+          1.9299
+        ],
+        "Romania": [
+          1.5738,
+          -0.1878
+        ],
+        "Russia": [
+          1.5584,
+          -0.5647
+        ],
+        "Saudi Arabia": [
+          -0.33,
+          0.2937
+        ],
+        "Serbia": [
+          0.7441,
+          -0.5322
+        ],
+        "Singapore": [
+          1.0495,
+          -0.6511
+        ],
+        "Slovakia": [
+          0.9167,
+          -1.4937
+        ],
+        "Slovenia": [
+          1.3162,
+          -0.6536
+        ],
+        "South Africa": [
+          -1.2309,
+          0.7757
+        ],
+        "South Korea": [
+          2.3545,
+          -2.0863
+        ],
+        "Sri Lanka": [
+          -0.2185,
+          -1.5412
+        ],
+        "Switzerland": [
+          1.9198,
+          -0.03
+        ],
+        "Thailand": [
+          0.022,
+          -1.2971
+        ],
+        "Togo": [
+          -2.7822,
+          -0.8387
+        ],
+        "Tunisia": [
+          -0.695,
+          -1.0836
+        ],
+        "Turkey": [
+          -0.4571,
+          -0.267
+        ],
+        "Uganda": [
+          -3.7613,
+          -0.6061
+        ],
+        "Ukraine": [
+          0.6614,
+          -1.0451
+        ],
+        "United Arab Emirates": [
+          1.619,
+          0.1126
+        ],
+        "United Kingdom": [
+          1.8745,
+          2.9627
+        ],
+        "United States": [
+          1.5896,
+          2.455
+        ],
+        "Uruguay": [
+          0.1089,
+          -0.9904
+        ],
+        "Vietnam": [
+          -0.874,
+          -0.869
+        ],
+        "Zambia": [
+          -2.1634,
+          -0.9499
+        ],
+        "Zimbabwe": [
+          -3.0927,
+          -0.4144
+        ]
+      }
+    },
+    "vecinos_foco": [
+      {
+        "pais": "Colombia",
+        "nombre": "Colombia",
+        "distancia": 1.8677
+      },
+      {
+        "pais": "Peru",
+        "nombre": "Perú",
+        "distancia": 2.3109
+      },
+      {
+        "pais": "Ecuador",
+        "nombre": "Ecuador",
+        "distancia": 2.5258
+      },
+      {
+        "pais": "Panama",
+        "nombre": "Panamá",
+        "distancia": 2.6464
+      },
+      {
+        "pais": "South Africa",
+        "nombre": "Sudáfrica",
+        "distancia": 2.7634
+      }
+    ],
+    "foco": {
+      "valores": {
+        "total_deaths_per_million": 646.79,
+        "total_cases_per_million": 11141.153,
+        "letalidad": 5.8054,
+        "total_tests_per_thousand": 23.785,
+        "stringency_index": 89.8952,
+        "hospital_beds_per_thousand": 1.1,
+        "human_development_index": 0.693,
+        "median_age": 25.4
+      },
+      "z": {
+        "total_deaths_per_million": 2.282,
+        "total_cases_per_million": 0.6237,
+        "letalidad": 1.2717,
+        "total_tests_per_thousand": -0.6235,
+        "stringency_index": 2.1216,
+        "hospital_beds_per_thousand": -0.8527,
+        "human_development_index": -0.6853,
+        "median_age": -1.0443
+      }
+    }
+  }
+}

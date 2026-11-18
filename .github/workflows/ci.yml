@@ -1,0 +1,42 @@
+name: CI
+
+# En cada push y pull request: instala dependencias, regenera todo el análisis y ejecuta las pruebas.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Ejecutar el pipeline completo
+        run: python run_all.py
+
+      - name: Ejecutar las pruebas
+        run: python -m pytest
+
+      - name: Guardar la página y los resultados generados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-y-pagina
+          path: |
+            resultados/
+            docs/
+          retention-days: 14

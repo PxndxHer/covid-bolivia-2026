@@ -1,0 +1,524 @@
+{
+  "muestra": {
+    "municipios": 94,
+    "altos": 39,
+    "bajos": 55,
+    "umbral_letalidad": 3.7,
+    "semana_referencia": 27,
+    "semana_fin": 30,
+    "min_casos": 30,
+    "alto_en_ambas": 30,
+    "pasan_a_alto": 9,
+    "pasan_a_bajo": 7,
+    "bajo_en_ambas": 48,
+    "por_departamento": {
+      "BENI": {
+        "municipios": 10,
+        "altos": 3
+      },
+      "CHUQUISACA": {
+        "municipios": 2,
+        "altos": 1
+      },
+      "COCHABAMBA": {
+        "municipios": 15,
+        "altos": 13
+      },
+      "LA PAZ": {
+        "municipios": 6,
+        "altos": 3
+      },
+      "ORURO": {
+        "municipios": 4,
+        "altos": 4
+      },
+      "PANDO": {
+        "municipios": 3,
+        "altos": 1
+      },
+      "POTOSI": {
+        "municipios": 7,
+        "altos": 3
+      },
+      "SANTA CRUZ": {
+        "municipios": 38,
+        "altos": 10
+      },
+      "TARIJA": {
+        "municipios": 9,
+        "altos": 1
+      }
+    }
+  },
+  "validacion": {
+    "pliegues": 5,
+    "repeticiones": 20,
+    "nivel_confianza": 0.95,
+    "metodo_ic": "t con corrección de Nadeau y Bengio (2003)"
+  },
+  "metricas": [
+    {
+      "modelo": "arbol",
+      "conjunto": "A",
+      "nombre": "Árbol de decisión",
+      "accuracy": {
+        "media": 0.6367,
+        "de": 0.093,
+        "ic_inf": 0.5426,
+        "ic_sup": 0.7309
+      },
+      "precision": {
+        "media": 0.6565,
+        "de": 0.2231,
+        "ic_inf": 0.4308,
+        "ic_sup": 0.8822
+      },
+      "recall": {
+        "media": 0.3916,
+        "de": 0.1837,
+        "ic_inf": 0.2058,
+        "ic_sup": 0.5775
+      },
+      "f1": {
+        "media": 0.4544,
+        "de": 0.1592,
+        "ic_inf": 0.2933,
+        "ic_sup": 0.6155
+      },
+      "roc_auc": {
+        "media": 0.617,
+        "de": 0.1167,
+        "ic_inf": 0.4989,
+        "ic_sup": 0.7351
+      }
+    },
+    {
+      "modelo": "bosque",
+      "conjunto": "A",
+      "nombre": "Bosque aleatorio",
+      "accuracy": {
+        "media": 0.6904,
+        "de": 0.0726,
+        "ic_inf": 0.6169,
+        "ic_sup": 0.7638
+      },
+      "precision": {
+        "media": 0.7741,
+        "de": 0.2046,
+        "ic_inf": 0.5671,
+        "ic_sup": 0.9811
+      },
+      "recall": {
+        "media": 0.3846,
+        "de": 0.1726,
+        "ic_inf": 0.21,
+        "ic_sup": 0.5593
+      },
+      "f1": {
+        "media": 0.4873,
+        "de": 0.1692,
+        "ic_inf": 0.3161,
+        "ic_sup": 0.6584
+      },
+      "roc_auc": {
+        "media": 0.6775,
+        "de": 0.1199,
+        "ic_inf": 0.5561,
+        "ic_sup": 0.7988
+      }
+    },
+    {
+      "modelo": "logistica",
+      "conjunto": "A",
+      "nombre": "Regresión logística",
+      "accuracy": {
+        "media": 0.6825,
+        "de": 0.0837,
+        "ic_inf": 0.5978,
+        "ic_sup": 0.7671
+      },
+      "precision": {
+        "media": 0.6904,
+        "de": 0.2001,
+        "ic_inf": 0.488,
+        "ic_sup": 0.8929
+      },
+      "recall": {
+        "media": 0.4466,
+        "de": 0.1725,
+        "ic_inf": 0.272,
+        "ic_sup": 0.6212
+      },
+      "f1": {
+        "media": 0.5235,
+        "de": 0.1562,
+        "ic_inf": 0.3654,
+        "ic_sup": 0.6815
+      },
+      "roc_auc": {
+        "media": 0.6502,
+        "de": 0.1259,
+        "ic_inf": 0.5229,
+        "ic_sup": 0.7776
+      }
+    },
+    {
+      "modelo": "mayoritaria",
+      "conjunto": "A",
+      "nombre": "Clase mayoritaria",
+      "accuracy": {
+        "media": 0.5854,
+        "de": 0.0129,
+        "ic_inf": 0.5723,
+        "ic_sup": 0.5985
+      },
+      "precision": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "recall": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "f1": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "roc_auc": {
+        "media": 0.5,
+        "de": 0.0,
+        "ic_inf": 0.5,
+        "ic_sup": 0.5
+      }
+    },
+    {
+      "modelo": "arbol",
+      "conjunto": "B",
+      "nombre": "Árbol de decisión",
+      "accuracy": {
+        "media": 0.7752,
+        "de": 0.0705,
+        "ic_inf": 0.7039,
+        "ic_sup": 0.8466
+      },
+      "precision": {
+        "media": 0.8321,
+        "de": 0.1325,
+        "ic_inf": 0.698,
+        "ic_sup": 0.9662
+      },
+      "recall": {
+        "media": 0.5948,
+        "de": 0.1679,
+        "ic_inf": 0.425,
+        "ic_sup": 0.7647
+      },
+      "f1": {
+        "media": 0.6765,
+        "de": 0.1241,
+        "ic_inf": 0.5509,
+        "ic_sup": 0.8021
+      },
+      "roc_auc": {
+        "media": 0.7844,
+        "de": 0.1013,
+        "ic_inf": 0.6819,
+        "ic_sup": 0.8869
+      }
+    },
+    {
+      "modelo": "bosque",
+      "conjunto": "B",
+      "nombre": "Bosque aleatorio",
+      "accuracy": {
+        "media": 0.8162,
+        "de": 0.0743,
+        "ic_inf": 0.7411,
+        "ic_sup": 0.8914
+      },
+      "precision": {
+        "media": 0.8341,
+        "de": 0.1168,
+        "ic_inf": 0.7159,
+        "ic_sup": 0.9523
+      },
+      "recall": {
+        "media": 0.7091,
+        "de": 0.1402,
+        "ic_inf": 0.5673,
+        "ic_sup": 0.8509
+      },
+      "f1": {
+        "media": 0.7577,
+        "de": 0.1064,
+        "ic_inf": 0.6501,
+        "ic_sup": 0.8654
+      },
+      "roc_auc": {
+        "media": 0.831,
+        "de": 0.0931,
+        "ic_inf": 0.7368,
+        "ic_sup": 0.9252
+      }
+    },
+    {
+      "modelo": "logistica",
+      "conjunto": "B",
+      "nombre": "Regresión logística",
+      "accuracy": {
+        "media": 0.7699,
+        "de": 0.0856,
+        "ic_inf": 0.6832,
+        "ic_sup": 0.8565
+      },
+      "precision": {
+        "media": 0.763,
+        "de": 0.1277,
+        "ic_inf": 0.6339,
+        "ic_sup": 0.8922
+      },
+      "recall": {
+        "media": 0.6746,
+        "de": 0.165,
+        "ic_inf": 0.5077,
+        "ic_sup": 0.8416
+      },
+      "f1": {
+        "media": 0.7016,
+        "de": 0.1245,
+        "ic_inf": 0.5756,
+        "ic_sup": 0.8276
+      },
+      "roc_auc": {
+        "media": 0.7925,
+        "de": 0.1021,
+        "ic_inf": 0.6892,
+        "ic_sup": 0.8958
+      }
+    },
+    {
+      "modelo": "mayoritaria",
+      "conjunto": "B",
+      "nombre": "Clase mayoritaria",
+      "accuracy": {
+        "media": 0.5854,
+        "de": 0.0129,
+        "ic_inf": 0.5723,
+        "ic_sup": 0.5985
+      },
+      "precision": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "recall": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "f1": {
+        "media": 0.0,
+        "de": 0.0,
+        "ic_inf": 0.0,
+        "ic_sup": 0.0
+      },
+      "roc_auc": {
+        "media": 0.5,
+        "de": 0.0,
+        "ic_inf": 0.5,
+        "ic_sup": 0.5
+      }
+    },
+    {
+      "modelo": "persistencia",
+      "conjunto": "-",
+      "nombre": "Persistencia (letalidad SE 27 ≥ umbral)",
+      "accuracy": {
+        "media": 0.83,
+        "de": 0.0784,
+        "ic_inf": 0.7507,
+        "ic_sup": 0.9093
+      },
+      "precision": {
+        "media": 0.8199,
+        "de": 0.1104,
+        "ic_inf": 0.7082,
+        "ic_sup": 0.9316
+      },
+      "recall": {
+        "media": 0.7695,
+        "de": 0.1356,
+        "ic_inf": 0.6323,
+        "ic_sup": 0.9067
+      },
+      "f1": {
+        "media": 0.7871,
+        "de": 0.1001,
+        "ic_inf": 0.6858,
+        "ic_sup": 0.8884
+      },
+      "roc_auc": {
+        "media": 0.8327,
+        "de": 0.0929,
+        "ic_inf": 0.7388,
+        "ic_sup": 0.9267
+      }
+    }
+  ],
+  "mejor_modelo": {
+    "modelo": "bosque",
+    "conjunto": "B",
+    "nombre": "Bosque aleatorio"
+  },
+  "diferencia_mejor_vs_persistencia": {
+    "accuracy": {
+      "media": -0.0138,
+      "ic_inf": -0.0636,
+      "ic_sup": 0.036,
+      "proporcion_pliegues_modelo_mejor": 0.19
+    },
+    "precision": {
+      "media": 0.0141,
+      "ic_inf": -0.0603,
+      "ic_sup": 0.0886,
+      "proporcion_pliegues_modelo_mejor": 0.28
+    },
+    "recall": {
+      "media": -0.0604,
+      "ic_inf": -0.1481,
+      "ic_sup": 0.0274,
+      "proporcion_pliegues_modelo_mejor": 0.0
+    },
+    "f1": {
+      "media": -0.0293,
+      "ic_inf": -0.0976,
+      "ic_sup": 0.039,
+      "proporcion_pliegues_modelo_mejor": 0.19
+    },
+    "roc_auc": {
+      "media": -0.0017,
+      "ic_inf": -0.0628,
+      "ic_sup": 0.0594,
+      "proporcion_pliegues_modelo_mejor": 0.45
+    }
+  },
+  "decision": {
+    "metrica": "f1",
+    "persistencia_principal": true,
+    "persistencia_supera_o_iguala": true,
+    "ic_diferencia_incluye_cero": true
+  },
+  "matrices_confusion": {
+    "arbol_A": {
+      "verdaderos_negativos": 44.6,
+      "falsos_positivos": 10.4,
+      "falsos_negativos": 23.75,
+      "verdaderos_positivos": 15.25,
+      "total": 94.0
+    },
+    "bosque_A": {
+      "verdaderos_negativos": 49.9,
+      "falsos_positivos": 5.1,
+      "falsos_negativos": 24.0,
+      "verdaderos_positivos": 15.0,
+      "total": 94.0
+    },
+    "logistica_A": {
+      "verdaderos_negativos": 46.75,
+      "falsos_positivos": 8.25,
+      "falsos_negativos": 21.6,
+      "verdaderos_positivos": 17.4,
+      "total": 94.0
+    },
+    "mayoritaria_A": {
+      "verdaderos_negativos": 55.0,
+      "falsos_positivos": 0.0,
+      "falsos_negativos": 39.0,
+      "verdaderos_positivos": 0.0,
+      "total": 94.0
+    },
+    "arbol_B": {
+      "verdaderos_negativos": 49.65,
+      "falsos_positivos": 5.35,
+      "falsos_negativos": 15.8,
+      "verdaderos_positivos": 23.2,
+      "total": 94.0
+    },
+    "bosque_B": {
+      "verdaderos_negativos": 49.05,
+      "falsos_positivos": 5.95,
+      "falsos_negativos": 11.35,
+      "verdaderos_positivos": 27.65,
+      "total": 94.0
+    },
+    "logistica_B": {
+      "verdaderos_negativos": 46.05,
+      "falsos_positivos": 8.95,
+      "falsos_negativos": 12.7,
+      "verdaderos_positivos": 26.3,
+      "total": 94.0
+    },
+    "mayoritaria_B": {
+      "verdaderos_negativos": 55.0,
+      "falsos_positivos": 0.0,
+      "falsos_negativos": 39.0,
+      "verdaderos_positivos": 0.0,
+      "total": 94.0
+    },
+    "persistencia": {
+      "verdaderos_negativos": 48.0,
+      "falsos_positivos": 7.0,
+      "falsos_negativos": 9.0,
+      "verdaderos_positivos": 30.0,
+      "total": 94.0
+    }
+  },
+  "importancia": [
+    {
+      "variable": "letalidad_ref",
+      "nombre": "Letalidad (SE 27)",
+      "media": 0.2006,
+      "de": 0.1283,
+      "p05": 0.0335,
+      "p95": 0.421
+    },
+    {
+      "variable": "departamento",
+      "nombre": "Departamento",
+      "media": 0.0194,
+      "de": 0.0561,
+      "p05": -0.0795,
+      "p95": 0.1136
+    },
+    {
+      "variable": "fallecidos_ref",
+      "nombre": "Fallecidos (SE 27)",
+      "media": 0.015,
+      "de": 0.0528,
+      "p05": -0.078,
+      "p95": 0.1028
+    },
+    {
+      "variable": "log10_confirmados",
+      "nombre": "log₁₀ confirmados (SE 27)",
+      "media": -0.0067,
+      "de": 0.0321,
+      "p05": -0.0572,
+      "p95": 0.0343
+    }
+  ],
+  "importancia_modelo": {
+    "modelo": "bosque",
+    "conjunto": "B",
+    "repeticiones_cv": 4,
+    "permutaciones": 10
+  }
+}

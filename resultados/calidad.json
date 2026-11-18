@@ -1,0 +1,38 @@
+{
+  "municipios": {
+    "filas": 1639,
+    "municipios": 256,
+    "departamentos": 9,
+    "semanas_presentes": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      27,
+      28,
+      29,
+      30
+    ],
+    "semanas_faltantes": [
+      26
+    ],
+    "duplicados": 0,
+    "nulos": 0,
+    "fallas_identidad": 0,
+    "codigos_con_nombres_distintos": 4,
+    "descensos_acumulados": {
+      "confirmados": 5,
+      "fallecidos": 6
+    }
+  },
+  "owid": {
+    "filas_crudas": 44785,
+    "filas_descartadas_agregados_o_sin_iso": 718,
+    "filas": 44067,
+    "paises": 209,
+    "fecha_min": "2019-12-31",
+    "fecha_max": "2020-09-19"
+  }
+}

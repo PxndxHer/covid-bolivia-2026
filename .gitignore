@@ -1,0 +1,21 @@
+# Entorno virtual y cachés de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Datos derivados: se regeneran con `python run_all.py`
+datos/procesados/*
+!datos/procesados/.gitkeep
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Nota: `resultados/`, `figuras/` y `docs/` SÍ se versionan, porque el README
+# muestra figuras y GitHub Pages publica la carpeta `docs/`.

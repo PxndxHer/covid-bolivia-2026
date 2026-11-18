@@ -1,0 +1,8 @@
+# Finales de línea LF en el repositorio para todo el texto (Windows y Linux/CI producen lo mismo).
+* text=auto eol=lf
+
+# Los datos crudos no se modifican nunca: git los guarda tal cual, sin convertir finales de línea.
+datos/crudos/** -text
+
+# Archivos binarios
+*.png binary
